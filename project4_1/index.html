@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tourist Attractions In Surat</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 collapse bg-inverse pt-2 sidebar_width" id="sidebar">
+          <h4 class="loc_name text-white">Locations to look for..</h4>
+          <!-- Search Input -->
+          <input class="search" data-bind="textInput: locationList, valueUpdate: 'afterkeydown'" placeholder="Search Location">
+          <ul class="nav flex-column" data-bind="foreach: Filter">
+            <a href="#"><li class="nav-item text-white location_list" data-bind="text: title, click: $parent.popAnimate"></li></a>
+          </ul>
+        </nav>
+
+        <main class="col p-0 navbar-inverse">
+          <a href class="float-left m-3 navbar-light navbar-toggler-icon" data-target="#sidebar" data-toggle="collapse"></a>
+          <div class="bg-inverse">
+          <!-- Map Content -->
+            <div id="map"></div>
+            <div id="wiki_info"></div>
+            <span>
+              <a href="https://en.wikipedia.org/" class="href text-center" target="_blank">
+                <img class="wikipedia" src="img/wikipedia_logo.svg" alt="wikipedia_logo">
+              </a>
+            </span>
+          </div>
+        </main>
+
+      </div>
+    </div>
+
+    <script src="js/knockout-3.4.2.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="js/places.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYlzl7hgzbXzn_YvpILk-j_N-VOV9kt-U&callback=initialize" onerror="googlemapsError()"></script>
+  </body>
+</html>
