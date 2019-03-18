@@ -22,7 +22,7 @@ function ViewModel() {
         //Wikipedia API to fetch the locations' information.
         $.ajax({
           type: "GET",
-          url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+marker.wikiID+"&callback=?",
+          url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+marker.wikiID+"&callback=?",
           contentType: "application/json",
           async: true,
           dataType: "json",
